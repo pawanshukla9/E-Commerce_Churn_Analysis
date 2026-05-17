@@ -6,7 +6,7 @@ The goal of this project is to identify patterns related to customer churn, purc
 
 ---
 
-## 🚀 Project Overview
+##  Project Overview
 
 This project analyzes an e-commerce customer dataset to answer business-focused questions such as:
 
@@ -20,7 +20,7 @@ The notebook also includes an interactive Dash dashboard that allows users to fi
 
 ---
 
-## 🧰 Tech Stack
+##  Tech Stack
 
 - **Python**
 - **pandas** – data loading, cleaning, and transformation
@@ -35,7 +35,7 @@ The notebook also includes an interactive Dash dashboard that allows users to fi
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```text
 .
@@ -47,7 +47,7 @@ The notebook also includes an interactive Dash dashboard that allows users to fi
 
 ---
 
-## 📦 Dataset
+##  Dataset
 
 The project uses an e-commerce customer churn dataset containing customer demographics, engagement metrics, purchase behaviour, payment information, churn status, and signup quarter.
 
@@ -76,7 +76,7 @@ The notebook loads the raw dataset from GitHub, cleans it, creates new analytica
 
 ---
 
-## 🧼 Data Cleaning Steps
+##  Data Cleaning Steps
 
 The raw dataset is cleaned and prepared using the following steps:
 
@@ -93,7 +93,7 @@ The raw dataset is cleaned and prepared using the following steps:
 
 ---
 
-## 🛠️ Feature Engineering
+##  Feature Engineering
 
 Additional columns were created to make analysis and dashboarding easier:
 
@@ -107,7 +107,7 @@ Additional columns were created to make analysis and dashboarding easier:
 
 ---
 
-## 📈 Exploratory Data Analysis
+##  Exploratory Data Analysis
 
 The notebook explores several customer behaviour and churn-related questions.
 
@@ -123,7 +123,7 @@ The notebook explores several customer behaviour and churn-related questions.
 
 ---
 
-## 🔍 Key Insights
+##  Key Insights
 
 - The **18-25 age group** has the highest average lifetime value at approximately **$1,446.60**, but the difference across age groups is small.
 - The **USA** contributes the largest share of total orders at approximately **34.7%**.
@@ -136,7 +136,7 @@ The notebook explores several customer behaviour and churn-related questions.
 
 ---
 
-## 🖥️ Interactive Dashboard
+##  Interactive Dashboard
 
 The project includes a professional interactive dashboard built with Dash and Plotly.
 
@@ -179,7 +179,7 @@ The dashboard includes the following visual components:
 
 ---
 
-## ⚙️ Installation
+##  Installation
 
 Clone the repository:
 
@@ -204,7 +204,7 @@ pip install pandas numpy matplotlib seaborn dash dash-bootstrap-components plotl
 
 ---
 
-## ▶️ How to Run the Project
+##  How to Run the Project
 
 ### Option 1: Run the Jupyter Notebook
 
@@ -236,7 +236,7 @@ After running the dashboard cell, open the local dashboard URL in your browser.
 
 ---
 
-## 🌐 Optional: Share Dashboard with ngrok
+##  Optional: Share Dashboard with ngrok
 
 To share the local dashboard publicly, create a `.env` file in the project root:
 
@@ -270,13 +270,13 @@ ngrok.kill()
 
 ---
 
-## 📊 Business Value
+##  Business Value
 
 This project demonstrates how customer data can be transformed into actionable business insights. By combining data cleaning, exploratory analysis, customer segmentation, and dashboarding, the project helps identify high-value customers, understand churn behaviour, and support data-driven retention strategies.
 
 ---
 
-## ✅ Skills Demonstrated
+##  Skills Demonstrated
 
 - Data cleaning and preprocessing
 - Exploratory data analysis
@@ -289,7 +289,7 @@ This project demonstrates how customer data can be transformed into actionable b
 
 ---
 
-## 👤 Authors
+##  Authors
 
 - **Gouri Biju**
 - **Narjes Atashimsina**
