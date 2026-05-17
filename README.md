@@ -286,9 +286,6 @@ This project demonstrates how customer data can be transformed into actionable b
 - Business insight generation
 - Data visualization
 - Interactive dashboard development
-- Dash callback implementation
-- Environment variable handling
-- Public dashboard sharing with ngrok
 
 ---
 
