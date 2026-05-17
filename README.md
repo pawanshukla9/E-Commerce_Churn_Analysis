@@ -40,7 +40,7 @@ The notebook also includes an interactive Dash dashboard that allows users to fi
 ```text
 .
 ├── E-Commerce_Analysis_G5.ipynb         # Main Jupyter Notebook
-├── e-commerce_churn_clean.csv           # Cleaned dataset generated from the notebook
+├── data/e-commerce_churn_clean.csv      # Cleaned dataset generated from the notebook
 ├── README.md                            # Project documentation
 └── .env                                 # Optional: stores NGROK_AUTH_TOKEN locally
 ```
