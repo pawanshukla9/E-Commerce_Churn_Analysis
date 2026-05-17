@@ -217,7 +217,7 @@ jupyter notebook
 Then open:
 
 ```text
-E-Commerce_Analysis_G5(2).ipynb
+E-Commerce_Analysis_G5.ipynb
 ```
 
 Run the notebook cells from top to bottom.
