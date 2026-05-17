@@ -292,13 +292,13 @@ This project demonstrates how customer data can be transformed into actionable b
 
 ---
 
-## 👤 Author
+## 👤 Authors
 
-**Gouri Biju**
-**Narjes Atashimsina**
-**Pawan Shukla**
-**Sai Tirupati Voona**
-**Srijana Shrestha**
-**Tesfalem Beyene**
-**Zachary Henry**
+- **Gouri Biju**
+- **Narjes Atashimsina**
+- **Pawan Shukla**
+- **Sai Tirupati Voona**
+- **Srijana Shrestha**
+- **Tesfalem Beyene**
+- **Zachary Henry**
 
