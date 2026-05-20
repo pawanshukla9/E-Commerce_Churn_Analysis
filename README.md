@@ -1,62 +1,68 @@
 # 📊 E-Commerce Customer Churn Analysis
 
-A data analytics and dashboarding project that explores customer churn behaviour in an e-commerce dataset. The project uses Python for data cleaning, feature engineering, exploratory data analysis, and interactive dashboard development with Plotly Dash.
+A data analysis and interactive dashboard project focused on understanding customer churn behavior in an e-commerce business. The project uses Python for data cleaning, exploratory analysis, visualization, and dashboard development with Dash and Plotly.
 
-The goal of this project is to identify patterns related to customer churn, purchasing behaviour, customer lifetime value, engagement, and high-risk customer segments.
-
----
-
-##  Project Overview
-
-This project analyzes an e-commerce customer dataset to answer business-focused questions such as:
-
-- Which customer groups generate the highest lifetime value?
-- Which countries contribute the most orders?
-- How does mobile app usage relate to total orders?
-- Which customer segments show higher churn risk?
-- How do engagement level, value segment, country, gender, and age group affect churn behaviour?
-
-The notebook also includes an interactive Dash dashboard that allows users to filter the dataset and explore churn insights dynamically.
+The analysis explores customer demographics, engagement behavior, purchasing activity, lifetime value, churn trends, and customer value segments to identify patterns that can help improve retention and business decision-making.
 
 ---
 
-##  Tech Stack
+## 📌 Project Overview
 
-- **Python**
-- **pandas** – data loading, cleaning, and transformation
-- **NumPy** – numeric operations
-- **Matplotlib** – static visualizations
-- **Seaborn** – exploratory visualizations
-- **Plotly Express / Plotly Graph Objects** – interactive charts
-- **Dash** – interactive web dashboard
-- **Dash Bootstrap Components** – responsive dashboard layout
-- **ngrok** – optional public sharing of the local dashboard
-- **python-dotenv** – environment variable management for ngrok token
+Customer churn is one of the most important metrics for subscription-based and e-commerce businesses. This project analyzes an e-commerce customer dataset to understand which factors are associated with customer churn and how different customer segments behave.
 
----
+The notebook includes:
 
-##  Project Structure
-
-```text
-.
-├── E-Commerce_Analysis_G5.ipynb         # Main Jupyter Notebook
-├── data/e-commerce_churn_clean.csv      # Cleaned dataset generated from the notebook
-├── README.md                            # Project documentation
-└── .env                                 # Optional: stores NGROK_AUTH_TOKEN locally
-```
+- Data loading from a GitHub-hosted CSV file
+- Data cleaning and preprocessing
+- Feature engineering for customer segmentation
+- Exploratory data analysis using pandas, matplotlib, and seaborn
+- Correlation analysis between customer behavior variables
+- Interactive dashboard development using Dash and Plotly
+- Dashboard sharing through ngrok
 
 ---
 
-##  Dataset
+## 🎯 Objectives
 
-The project uses an e-commerce customer churn dataset containing customer demographics, engagement metrics, purchase behaviour, payment information, churn status, and signup quarter.
+The main goals of this project are to:
+
+- Clean and prepare raw e-commerce customer data for analysis
+- Understand customer behavior across age groups, countries, quarters, and value segments
+- Identify relationships between engagement metrics and purchase activity
+- Analyze churn rate across customer segments
+- Build an interactive dashboard for exploring churn behavior dynamically
+- Present business insights in a clear and visual format
+
+---
+
+## 🧰 Technologies Used
+
+| Category | Tools / Libraries |
+|---|---|
+| Programming Language | Python |
+| Data Manipulation | pandas, NumPy |
+| Data Visualization | matplotlib, seaborn, Plotly |
+| Dashboarding | Dash, dash-bootstrap-components |
+| App Sharing | ngrok, pyngrok |
+| Environment Variables | python-dotenv |
+| Notebook Environment | Jupyter Notebook |
+
+---
+
+## 📂 Dataset
+
+The project uses an e-commerce customer churn dataset loaded directly from GitHub.
+
+The cleaned dataset contains:
+
+- **49,950 rows**
+- **30 columns**
 
 Key columns include:
 
 - `Age`
 - `Gender`
 - `Country`
-- `City`
 - `Login_Frequency`
 - `Session_Duration_Avg`
 - `Pages_Per_Session`
@@ -65,150 +71,148 @@ Key columns include:
 - `Total_Orders`
 - `Average_Order_Value`
 - `Lifetime_Value`
-- `Mobile_App_Usage`
-- `Social_Media_Engagement_Score`
-- `Customer_Service_Calls`
-- `Payment_Method_Diversity`
-- `Churned`
 - `Signup_Quarter`
-
-The notebook loads the raw dataset from GitHub, cleans it, creates new analytical features, and exports a cleaned CSV file.
-
----
-
-##  Data Cleaning Steps
-
-The raw dataset is cleaned and prepared using the following steps:
-
-- Renamed `Total_Purchases` to `Total_Orders` for clearer business meaning.
-- Removed invalid age values outside the realistic age range.
-- Clipped negative or out-of-range values in numeric columns.
-- Filled missing `Wishlist_Items` values with `0`.
-- Filled missing numeric values using the median.
-- Converted selected numeric columns to integer format.
-- Rounded decimal columns for cleaner reporting.
-- Standardized text values such as country names and abbreviations.
-- Removed duplicate rows.
-- Exported the cleaned dataset as `e-commerce_churn_clean.csv`.
+- `Churned`
 
 ---
 
-##  Feature Engineering
+## 🧹 Data Cleaning Steps
 
-Additional columns were created to make analysis and dashboarding easier:
+The raw dataset was cleaned and prepared using the following steps:
+
+- Renamed `Total_Purchases` to `Total_Orders`
+- Removed invalid age values
+- Clipped negative and out-of-range values in selected numeric columns
+- Filled missing values in `Wishlist_Items` with `0`
+- Filled missing numeric values using column medians
+- Converted selected columns to integer data types
+- Rounded decimal values where appropriate
+- Standardized text formatting
+- Standardized country abbreviations
+- Removed duplicate rows
+- Exported the cleaned data as `e-commerce_churn_clean.csv`
+
+---
+
+## 🏗️ Feature Engineering
+
+New columns were created to make the analysis and dashboard easier to understand:
 
 | Feature | Description |
 |---|---|
-| `Churn_Status` | Converts churn values into readable labels: `Active` and `Churned`. |
-| `Payment_Mode` | Maps payment method codes to names such as Cash, Debit Card, Credit Card, PayPal, and Others. |
-| `Age_Group` | Groups customers into age bands such as `18-25`, `26-35`, `36-45`, `46-55`, and `55 and above`. |
-| `Engagement_Tier` | Classifies customers into Low, Medium, High, and Very High engagement groups. |
-| `Value_Segment` | Segments customers into Bronze, Silver, Gold, and Platinum based on lifetime value. |
+| `Churn_Status` | Converts churn values into readable labels: `Active` and `Churned` |
+| `Payment_Mode` | Maps payment method codes to payment names |
+| `Age_Group` | Groups customers into age ranges |
+| `Engagement_Tier` | Segments customers based on login frequency |
+| `Value_Segment` | Divides customers into Bronze, Silver, Gold, and Platinum segments based on lifetime value |
 
 ---
 
-##  Exploratory Data Analysis
+## 📊 Exploratory Data Analysis
 
-The notebook explores several customer behaviour and churn-related questions.
+The notebook analyzes several business questions, including:
 
-### Key Analysis Areas
+### 1. Which Age Group Spends the Most?
 
-- Average lifetime value by age group
-- Total orders by country
-- Correlation between numeric variables
-- Mobile app usage vs total orders
-- Signup trends across quarters
-- Customer value segmentation
-- Lifetime value contribution by customer segment
+The average lifetime value is very similar across all age groups. The **18-25** age group has the highest average lifetime value at approximately **$1,446.60**, but the difference across age groups is small.
+
+This suggests that age group alone may not be a strong predictor of customer spending behavior.
+
+### 2. Which Country Shops the Most?
+
+The USA contributes the largest share of total orders at approximately **34.7%**. The UK contributes around **15.1%**, Canada contributes around **12.0%**, and Japan has the smallest share at approximately **5.1%**.
+
+### 3. Correlation Analysis
+
+The correlation analysis shows that `Total_Orders` has a strong positive relationship with engagement-related features such as:
+
+- `Session_Duration_Avg`
+- `Pages_Per_Session`
+- `Mobile_App_Usage`
+- `Login_Frequency`
+
+`Lifetime_Value` is also strongly related to `Total_Orders`, while `Cart_Abandonment_Rate` has a negative relationship with `Total_Orders`.
+
+### 4. Mobile App Usage vs Total Orders
+
+The scatter plot shows a moderate positive relationship between mobile app usage and total orders. The correlation between `Mobile_App_Usage` and `Total_Orders` is approximately **0.59**.
+
+This suggests that improving mobile app engagement may help increase customer purchasing activity.
+
+### 5. Signup Trend Across Quarters
+
+Customer signups are almost evenly distributed across all four quarters. Q3 has the highest number of signups with **12,551** customers, but the difference between quarters is small.
+
+### 6. Value Segment Summary
+
+The customer value segmentation separates customers into clear lifetime value groups:
+
+| Segment | Average Lifetime Value |
+|---|---:|
+| Platinum | $2,690.88 |
+| Gold | $1,530.02 |
+| Silver | $1,009.79 |
+| Bronze | $531.70 |
+
+Platinum customers contribute the highest average lifetime value, while Bronze customers contribute the lowest.
 
 ---
 
-##  Key Insights
+## 📈 Interactive Dashboard
 
-- The **18-25 age group** has the highest average lifetime value at approximately **$1,446.60**, but the difference across age groups is small.
-- The **USA** contributes the largest share of total orders at approximately **34.7%**.
-- The **UK** contributes around **15.1%**, while **Canada** contributes around **12.0%**.
-- **Japan** has the smallest order share at approximately **5.1%**.
-- `Mobile_App_Usage` has a moderate positive relationship with `Total_Orders`, with a correlation of approximately **0.59**.
-- Signup volume is fairly balanced across quarters, with **Q3** slightly leading at **12,551 signups**.
-- **Platinum customers** have the highest average lifetime value at approximately **$2,690.88**.
-- Platinum and Gold customers represent the most valuable segments, making them strong candidates for retention-focused marketing.
-
----
-
-##  Interactive Dashboard
-
-The project includes a professional interactive dashboard built with Dash and Plotly.
-
-### Dashboard Features
-
-- Responsive layout using Dash Bootstrap Components
-- Dark theme with custom CSS styling
-- KPI cards for high-level business metrics
-- Interactive filters for customer segmentation
-- Dynamic charts that update based on selected filters
-- High-risk churn segment table
-- Optional public sharing using ngrok
+The project includes an interactive Dash dashboard for exploring churn behavior across different customer segments.
 
 ### Dashboard Filters
 
 Users can filter the dashboard by:
 
 - Country
+- Signup Quarter
 - Gender
-- Age group
-- Engagement tier
-- Value segment
-- Payment mode
-- Signup quarter
-- Churn status
-- Lifetime value range
+- Age Group
+
+By default, all filter options are selected.
+
+### KPI Cards
+
+The dashboard displays three key performance indicators:
+
+- Total Customers
+- Churn Rate
+- Average Lifetime Value
+
+When a filter has no selected value or returns no matching records, the KPI cards display `0` and the charts show a clear **"No data is available"** message.
 
 ### Dashboard Visuals
 
-The dashboard includes the following visual components:
+The dashboard includes:
 
-- Customer status split donut chart
-- Churn rate by country
-- Signup trend by quarter
-- Churn rate by age group and gender
-- Churn heatmap by engagement tier and value segment
-- Social media engagement vs session duration scatter plot
-- Top cities by churn rate
-- Top risk segments table
+| Visual | Purpose |
+|---|---|
+| Churn Distribution Pie Chart | Shows churned vs active customers |
+| Churn Rate by Engagement Tier Bar Chart | Compares churn rate across engagement levels |
+| Quarterly Churn vs Retention Line Chart | Tracks churn and retention rates across quarters |
+| Engagement × Value Segment Heatmap | Shows churn rate across engagement and value segments |
+| Behavior Comparison Subplots | Compares login frequency, session duration, and pages per session for churned vs retained customers |
 
 ---
 
-##  Installation
+## 🚀 How to Run the Project
 
-Clone the repository:
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/your-username/your-repository-name.git
 cd your-repository-name
 ```
 
-Create and activate a virtual environment:
+### 2. Install Required Libraries
 
 ```bash
-python -m venv venv
-source venv/bin/activate      # macOS/Linux
-venv\Scripts\activate         # Windows
+pip install pandas plotly dash dash-bootstrap-components seaborn matplotlib numpy python-dotenv pyngrok
 ```
 
-Install the required libraries:
-
-```bash
-pip install pandas numpy matplotlib seaborn dash dash-bootstrap-components plotly pyngrok python-dotenv
-```
-
----
-
-##  How to Run the Project
-
-### Option 1: Run the Jupyter Notebook
-
-Start Jupyter Notebook or JupyterLab:
+### 3. Open the Notebook
 
 ```bash
 jupyter notebook
@@ -217,84 +221,64 @@ jupyter notebook
 Then open:
 
 ```text
-E-Commerce_Analysis_G5.ipynb
+E-Commerce_Analysis_G5(3).ipynb
 ```
 
-Run the notebook cells from top to bottom.
+### 4. Run the Notebook Cells
+
+Run the notebook cells from top to bottom to:
+
+1. Load the raw dataset
+2. Clean and transform the data
+3. Export the cleaned dataset
+4. Perform exploratory data analysis
+5. Launch the Dash dashboard
+
+### 5. Launch the Dashboard
+
+The dashboard runs locally on:
+
+```text
+http://127.0.0.1:8050/
+```
 
 ---
 
-### Option 2: Run the Dash Dashboard from the Notebook
+## 🌐 Sharing the Dashboard with ngrok
 
-The dashboard runs on port `8050`:
+The notebook also includes code to share the local Dash dashboard using ngrok.
 
-```python
-app.run(debug=False, port=8050, jupyter_mode="external")
-```
-
-After running the dashboard cell, open the local dashboard URL in your browser.
-
----
-
-##  Optional: Share Dashboard with ngrok
-
-To share the local dashboard publicly, create a `.env` file in the project root:
+Create a `.env` file in the project folder and add your ngrok auth token:
 
 ```env
 NGROK_AUTH_TOKEN=your_ngrok_auth_token_here
 ```
 
-Then run the ngrok cell from the notebook:
+Then run the ngrok section in the notebook to generate a public dashboard URL.
 
-```python
-from pyngrok import ngrok
-from dotenv import load_dotenv
-import os
-
-load_dotenv()
-
-ngrok_token = os.getenv("NGROK_AUTH_TOKEN")
-ngrok.set_auth_token(ngrok_token)
-
-public_url = ngrok.connect(8050)
-print("Dash app public URL:", public_url)
-
-app.run(port=8050, debug=False, jupyter_mode="external")
-```
-
-To stop the tunnel:
+To stop the tunnel, run:
 
 ```python
 ngrok.kill()
 ```
+---
+
+## 📌 Key Insights
+
+- Customer spending is similar across age groups, so age alone may not be the strongest churn or revenue indicator.
+- The USA contributes the largest share of total orders in the dataset.
+- Engagement metrics such as login frequency, session duration, pages per session, and mobile app usage are positively related to total orders.
+- Higher cart abandonment is associated with fewer total orders.
+- Platinum customers have the highest average lifetime value and represent the most valuable segment.
+- Interactive filtering makes it easier to explore churn behavior across demographics and engagement groups.
 
 ---
 
-##  Business Value
-
-This project demonstrates how customer data can be transformed into actionable business insights. By combining data cleaning, exploratory analysis, customer segmentation, and dashboarding, the project helps identify high-value customers, understand churn behaviour, and support data-driven retention strategies.
-
----
-
-##  Skills Demonstrated
-
-- Data cleaning and preprocessing
-- Exploratory data analysis
-- Feature engineering
-- Customer segmentation
-- Churn analysis
-- Business insight generation
-- Data visualization
-- Interactive dashboard development
-
----
-
-##  Authors
+## 👤 Author
 
 - **Gouri Biju**
 - **Narjes Atashimsina**
 - **Pawan Shukla**
-- **Sai Tirupati Voona**
 - **Srijana Shrestha**
 - **Tesfalem Beyene**
 - **Zachary Henry**
