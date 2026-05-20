@@ -274,7 +274,7 @@ ngrok.kill()
 
 ---
 
-## 👤 Author
+## 👤 Authors
 
 - **Gouri Biju**
 - **Narjes Atashimsina**
